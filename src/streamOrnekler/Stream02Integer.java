@@ -16,7 +16,7 @@ public class Stream02Integer {
         liste.add(4);
         liste.add(12);
         liste.add(15);
-        tekKareYazdır(liste);
+        tekKareYazdir(liste);
         System.out.println("\nTOPLAM:" + tekKupToplami(liste));
 
     }
@@ -26,7 +26,7 @@ public class Stream02Integer {
     //**************************************************************************************
     // map() metodu collection üzerinde bir transformation işlemi sağlayan ara işlem metodudur.
     // Eğer bir collectionın verilerininin değişik hallerini hesaplama istersek map() kullanabiliriz.
-    public static void tekKareYazdır(List <Integer> l){
+    public static void tekKareYazdir(List <Integer> l){
        l.stream().distinct().filter(Stream01Integer::tekMi).map(x->x*x).forEach(Stream01Integer::yazdir);
     }
 
