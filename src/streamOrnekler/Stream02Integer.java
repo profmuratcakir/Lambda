@@ -16,6 +16,7 @@ public class Stream02Integer {
         liste.add(4);
         liste.add(12);
         liste.add(15);
+        liste.add(125);
         tekKareYazdir(liste);
         System.out.println("\nTOPLAM:" + tekKupToplami(liste));
 
