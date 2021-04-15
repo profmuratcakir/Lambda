@@ -17,11 +17,9 @@ public class Stream02Integer {
         liste.add(12);
         liste.add(15);
         liste.add(500);
-
         tekKareYazdir(liste);
         System.out.println("\nTOPLAM:" + tekKupToplami(liste));
-
-    }
+   }
 
     //**************************************************************************************
     // ORNEK5: Bir listedeki tek sayıların karelerini yazdıran bir metot tanımlayınız.
@@ -43,5 +41,4 @@ public class Stream02Integer {
     //  return l.stream().filter(Stream01Integer::tekMi).map(x->x*x*x).reduce(Math::addExact);
         return l.stream().filter(Stream01Integer::tekMi).map(x->x*x*x).reduce(0, Integer::sum);
     }
-
 }
