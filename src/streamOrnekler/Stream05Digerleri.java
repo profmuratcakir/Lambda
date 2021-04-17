@@ -19,9 +19,13 @@ public class Stream05Digerleri {
     //****************************************************************************************************
     // ÖRNEK25: 1'den belirtilen değere kadar olan tamsayıları toplayan ve sonucu döndüren metodu yazınız.
     //****************************************************************************************************
+    // Instream.range(a,b) metodu parantez içerisinde verilen aralıklarda bir int stream oluşturur.
+    // Ancak, üst aralık (b) dahil değildir.
     public static int topla(int deger){
         return IntStream.range(1,  deger + 1).sum();
     }
+    // Instream.rangeCLosed(a,b) metodu parantez içerisinde verilen aralıklarda bir int stream oluşturur.
+    // alt(a) ve üst aralık (b) dahildir.
     public static int topla1(int deger){
         return IntStream.rangeClosed(1,  deger).sum();
     }
@@ -39,14 +43,21 @@ public class Stream05Digerleri {
     //****************************************************************************************************
     // ÖRNEK27: Berlirtilen sayının faktoriyelini hesaplayan metodunu tanımlayınız.
     //****************************************************************************************************
+    // iterate metodu aslında döngülere benzer. Başlangıcı ve artım miktarı parametre olarak verilebilir.
+    // Döngünün biteceği sayı ise limit() metodu ile gösterilir.
     public static Integer faktoriyel(int n){
        // return IntStream.rangeClosed(1,n).reduce(1,(x,y)->x*y);
        return IntStream.iterate(1, t->t+1).limit(n).reduce(1,(x,y)->x*y);
     }
+
+    // InStream gibi LongStream ve DoubleStream'ler de bulunmaktadır.
     public static Long faktoriyel1(int n){
         return LongStream.rangeClosed(1,n).reduce(1,(x, y)->x*y);
     }
 
+    // DoubleStream de range() metodu bulunmamaktadır.
+    // (Teorik olarak mantıklı değil. Çünkü, belirtilen aralıkta sonsuz adet double sayı olabilir).
+    // Ama iterate() metodu ile kullanıcı aralık, arttırım miktarı v.b vererek işlemler yapabilir.
     public static double faktoriyel2(int n){
         return DoubleStream.iterate(1, t->t+1).limit(n).reduce(1,(x,y)->x*y);
     }
