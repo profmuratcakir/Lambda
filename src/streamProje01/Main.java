@@ -71,7 +71,6 @@ public class Main {
     }
     //listeyi yazdırırken içinde veri var mı diye kontrol eden metot.
     public static void listeYazdir(List<Ogrenci> liste){
-        System.out.println("\n================ ÖĞRENCİ LİSTESİ ===================");
         if ((liste.isEmpty())) {
             System.out.print("Aranılan Öğrenci Bulunamadı");
         } else {
@@ -117,7 +116,6 @@ public class Main {
         } else {
             System.out.println(isim + " isimli öğrenciler SİLİNEMEDİ");
         }
-        listeYazdir(ogrListesi);
     }
 
     //Test amaçlı Öğrenci nesneleri oluşturur.
